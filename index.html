@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Open TCGKL App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    window.onload = function() {
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
+
+      // 1) iOS (iPhone/iPad)
+      if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) {
+        window.location.href = "https://apps.apple.com/my/app/tcgkl/id6708237683?platform=iphone";
+        return;
+      }
+      // 2) macOS desktop
+      if (/Macintosh|MacIntel/.test(ua) && !/Mobile/.test(ua)) {
+        window.location.href = "https://apps.apple.com/my/app/tcgkl/id6708237683?platform=iphone";
+        return;
+      }
+      // 3) Huawei Android devices
+      if (/android/i.test(ua) && /huawei/i.test(ua)) {
+        window.location.href = "huawei.html";
+        return;
+      }
+      // 4) Other Android devices
+      if (/android/i.test(ua)) {
+        window.location.href = "https://play.google.com/store/apps/details?id=com.shawwals.tcgkl&hl=en";
+        return;
+      }
+      // 5) Windows desktop
+      if (/Windows/.test(ua)) {
+        window.location.href = "https://play.google.com/store/apps/details?id=com.shawwals.tcgkl&hl=en";
+        return;
+      }
+      // 6) Fallback for anything else
+      window.location.href = "https://www.instagram.com/tcgkl.my";
+    };
+  </script>
+</head>
+<body>
+  <p>Redirecting you to the right place…</p>
+</body>
+</html>
